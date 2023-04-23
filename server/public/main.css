@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+  background-color: bisque;
+}
+
+.book_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book_tile {
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  border: 2px black solid;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.book_tile img {
+  max-width: 100px;
+}
