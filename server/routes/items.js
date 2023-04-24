@@ -1,16 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
-const db = require('../db/db')
+const dbFuncs = require('../db/db')
 
+// Get /api/v1/items
 router.get('/', (req, res) => {
-  db.getItems()
-    .then((items) => {
-      res.json(items)
+  //get db data
+  dbFuncs
+    .getItems()
+    //send on res
+    .then((itemsRoutes) => {
+      res.json(itemsRoutes)
     })
-    .catch((err) => {
-      res.status(500).send(err.message)
-    })
+    .catch((err) => res.status(500).json({ message: err.message }))
 })
 
 module.exports = router
