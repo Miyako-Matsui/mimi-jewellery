@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ItemName({ item }) {
+function Item({ item }) {
   return (
     <div className="book_tile">
       <h3>{item.name}</h3>
@@ -10,4 +10,4 @@ function ItemName({ item }) {
   )
 }
 
-export default ItemName
+export default Item
