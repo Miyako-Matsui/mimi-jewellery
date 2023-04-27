@@ -5,7 +5,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../server/public'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
+  devServer: { historyApiFallback: true },
   mode: 'development',
   module: {
     rules: [

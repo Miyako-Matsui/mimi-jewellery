@@ -1,17 +1,17 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import Items from './Items'
 import Home from './Home'
+import Items from './Items'
+import Item from './Item'
 
 function App() {
   return (
     <div>
-      <h1>Welcome!</h1>
-      <Items />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/items/:name" element={<Items />} />
+        <Route index path="/" element={<Home />} />
+        <Route path="items" element={<Items />} />
+        <Route path="items/:id" element={<Item />} />
       </Routes>
     </div>
   )

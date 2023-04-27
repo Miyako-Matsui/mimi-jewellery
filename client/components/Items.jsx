@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Item from './Item'
 import { getItems } from '../api/items'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Items() {
   const [items, setItems] = useState([])
-  const { name: item } = useParams
 
   useEffect(() => {
     getItems()
@@ -17,10 +15,10 @@ function Items() {
     <div>
       <h2>{items.name}</h2>
       <ul>
-        {items.map((i, index) => {
+        {items.map((item, index) => {
           return (
             <li key={index}>
-              <Link to={`/items/${i.name}`}>{i.name}</Link>
+              <Link to={`/items/${item.id}`}>{item.name}</Link>
             </li>
           )
         })}
