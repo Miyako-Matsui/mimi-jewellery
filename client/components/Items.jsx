@@ -14,12 +14,14 @@ function Items() {
   return (
     <div>
       <h2>{items.name}</h2>
-      <ul>
+      <ul className="item_container">
         {items.map((item, index) => {
           return (
-            <li key={index}>
-              <Link to={`/items/${item.id}`}>{item.name} </Link>
-            </li>
+            <p key={index} className="item_tile item_tile img">
+              <Link to={`/items/${item.id}`}>
+                <img src={item.img} alt={item.name} />{' '}
+              </Link>
+            </p>
           )
         })}
       </ul>
