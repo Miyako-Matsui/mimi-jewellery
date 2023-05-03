@@ -23,7 +23,11 @@ function Item() {
         <ul>
           {item.map((item) => (
             <li key={item.id}>
-              <p>{item.price}</p>
+              <li>Name: {item.name}</li>
+              <li>$ {item.price}</li>
+              <li>
+                <img src={item.img} alt={item.name} />
+              </li>
             </li>
           ))}
         </ul>
