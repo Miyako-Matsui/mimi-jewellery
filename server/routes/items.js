@@ -15,4 +15,16 @@ router.get('/', (req, res) => {
     .catch((err) => res.status(500).json({ message: err.message }))
 })
 
+router.get('/:id', (req, res) => {
+  const itemId = req.params.id
+  //get db data
+  dbFuncs
+    .getItem(itemId)
+    //send on res
+    .then((itemRoute) => {
+      res.json(itemRoute)
+    })
+    .catch((err) => res.status(500).json({ message: err.message }))
+})
+
 module.exports = router
