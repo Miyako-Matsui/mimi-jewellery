@@ -24,7 +24,7 @@ function Items() {
         })}
       </ul>
       <div>
-        <Link to={'/'}>Home</Link>
+        <Link to={'/'}>main</Link>
       </div>
     </div>
   )
