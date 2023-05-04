@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { getItems } from '../api/items'
 import { Link } from 'react-router-dom'
+import { useCart } from 'react-use-cart'
+import Cart from './Cart'
 
 function Items() {
+  const { addItem } = useCart()
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -19,12 +22,16 @@ function Items() {
           return (
             <p key={index} className="item_tile item_tile img">
               <Link to={`/items/${item.id}`}>
-                <img src={item.img} alt={item.name} />{' '}
+                <img src={item.img} alt={item.name} />
               </Link>
+              <button onClick={() => addItem(item)}>Add Cart</button>
             </p>
           )
         })}
       </ul>
+      <div>
+        <Cart />
+      </div>
       <div>
         <Link to={'/'}>main</Link>
       </div>

@@ -3,14 +3,20 @@ import { Route, Routes } from 'react-router-dom'
 
 import Items from './Items'
 import Item from './Item'
+// import Cart from './Cart'
+
+import { CartProvider } from 'react-use-cart'
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route index path="/" element={<Items />} />
-        <Route path="items/:id" element={<Item />} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route index path="/" element={<Items />} />
+          <Route path="items/:id" element={<Item />} />
+        </Routes>{' '}
+        {/* <Cart />{' '} */}
+      </CartProvider>
     </div>
   )
 }
