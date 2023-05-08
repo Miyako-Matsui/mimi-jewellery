@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SideMenu() {
+function Menu() {
   return (
     <div className="menu_container">
       <ul className="menu">
@@ -13,4 +13,4 @@ function SideMenu() {
     </div>
   )
 }
-export default SideMenu
+export default Menu
