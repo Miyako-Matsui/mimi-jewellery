@@ -13,7 +13,10 @@ function Cart() {
   } = useCart()
   if (isEmpty) return <p>Your Cart is empty</p>
   return (
-    <section>
+    <section
+      className="
+    cart_container"
+    >
       <div>
         <div>
           <p>Cart totalItems: ({totalItems})</p>

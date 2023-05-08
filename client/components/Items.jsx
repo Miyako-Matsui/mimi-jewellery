@@ -16,6 +16,10 @@ function Items() {
 
   return (
     <div>
+      {' '}
+      <div>
+        <Cart />
+      </div>
       <h2>{items.name}</h2>
       <ul className="item_container">
         {items.map((item, index) => {
@@ -29,9 +33,6 @@ function Items() {
           )
         })}
       </ul>
-      <div>
-        <Cart />
-      </div>
       <div>
         <Link to={'/'}>main</Link>
       </div>
