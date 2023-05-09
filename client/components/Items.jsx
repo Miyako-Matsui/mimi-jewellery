@@ -25,16 +25,19 @@ function Items() {
         {items.map((item, index) => {
           return (
             <p key={index} className="item_tile item_tile img">
-              <Link to={`/items/${item.id}`}>
-                <img src={item.img} alt={item.name} />
-              </Link>
+              <img src={item.img} alt={item.name} />
+              <button>
+                <Link to={`/items/${item.id}`}>More info</Link>
+              </button>
               <button onClick={() => addItem(item)}>Add Cart</button>
             </p>
           )
         })}
       </ul>
       <div>
-        <Link to={'/'}>main</Link>
+        <Link className="link_home" to={'/'}>
+          main
+        </Link>
       </div>
     </div>
   )

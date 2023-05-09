@@ -6,6 +6,11 @@ function Menu() {
       <ul className="menu">
         <li className="menu-item">
           <i className="fa fa-list-ul" aria-hidden="true">
+            About
+          </i>
+        </li>{' '}
+        <li className="menu-item">
+          <i className="fa fa-list-ul" aria-hidden="true">
             contact
           </i>
         </li>

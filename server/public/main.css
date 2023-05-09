@@ -197,3 +197,26 @@ li {
 .cart_container {
   padding-left: 50px;
 }
+
+.title {
+  font-size: large;
+  text-align: center;
+  padding: 50px;
+}
+
+.cart_item {
+  border: 0.5px;
+  border-style: solid;
+}
+
+.link_home,
+.each_item,
+.comment {
+  text-align: center;
+  display: block;
+}
+
+.cart_button {
+  display: block;
+  margin: auto;
+}

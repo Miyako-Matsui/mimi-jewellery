@@ -1,16 +1,10 @@
 import React from 'react'
 import { useCart } from 'react-use-cart'
+// import CartItems from './CartItems'
+import { Link } from 'react-router-dom'
 
 function Cart() {
-  const {
-    isEmpty,
-    items,
-    totalItems,
-    cartTotal,
-    updateItemQuantity,
-    removeItem,
-    emptyCart,
-  } = useCart()
+  const { isEmpty, totalItems, emptyCart } = useCart()
   if (isEmpty) return <p>Your Cart is empty</p>
   return (
     <section
@@ -19,48 +13,19 @@ function Cart() {
     >
       <div>
         <div>
-          <p>Cart totalItems: ({totalItems})</p>
-          <table>
-            <tbody>
-              {items.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>Name: {item.name}</td>
-                    <td>$: {item.price}</td>
-                    <td>Quantity: {item.quantity}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          updateItemQuantity(item.id, item.quantity + 1)
-                        }
-                      >
-                        +
-                      </button>
-                      <button
-                        onClick={() =>
-                          updateItemQuantity(item.id, item.quantity - 1)
-                        }
-                      >
-                        -
-                      </button>
-                      <button onClick={() => removeItem(item.id)}>
-                        Remove Item
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
+          <button className="cart_button">
+            <Link to="/cart">Cart totalItems: ({totalItems})</Link>
+          </button>
         </div>
         <div>
-          <p>Total price: ${cartTotal}</p>
+          <button className="cart_button" onClick={() => emptyCart()}>
+            Clear Cart
+          </button>
         </div>
         <div>
-          <button onClick={() => emptyCart()}>Clear Cart</button>
-        </div>
-        <div>
-          <button onClick={() => totalItems}>Buy Now</button>
+          <button className="cart_button" onClick={() => totalItems}>
+            Buy Now
+          </button>
         </div>
       </div>
     </section>
