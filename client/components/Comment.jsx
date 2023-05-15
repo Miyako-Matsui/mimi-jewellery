@@ -1,33 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Comment() {
-  const handleChange = () => {
-    console.log('change')
+  const [formData, setFormData] = useState({
+    name: '',
+    date: '',
+    comment: '',
+  })
+
+  useEffect(() => {
+    console.log('useEffect')
+  }, [])
+
+  const handleType = (evt) => {
+    const value = evt.target.value
+    const name = evt.target.name
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    console.log('change and submit')
+    console.log('submit', formData.name)
   }
+
   return (
     <>
       <div className="comment">
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" onChange={handleChange} />
+          <input type="text" id="name" name="name" onChange={handleType} />
 
           <label htmlFor="date">Date</label>
-          <input type="date" id="date" name="date" onChange={handleChange} />
+          <input type="date" id="date" name="date" onChange={handleType} />
 
           <label htmlFor="comment">Comment</label>
           <input
             type="text"
             id="comment"
             name="comment"
-            onChange={handleChange}
+            onChange={handleType}
           />
+          <button>Submit</button>
         </form>
-        <button>Submit</button>
       </div>
     </>
   )

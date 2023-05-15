@@ -36,7 +36,7 @@ function Item() {
       </div>
       <div>
         <Link className="link_home" to={'/'}>
-          main
+          back
         </Link>
       </div>
     </div>
