@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-function Comment() {
+function AddComment() {
   const [formData, setFormData] = useState({
     name: '',
     date: '',
     comment: '',
   })
+
+  const [comments, setComments] = useState([])
 
   useEffect(() => {
     console.log('useEffect')
@@ -45,8 +47,18 @@ function Comment() {
           <button>Submit</button>
         </form>
       </div>
+
+      <div>
+        {comments.map((comment) => (
+          <div key={comment.id}>
+            <p>{comment.name}</p>
+            <p>{comment.date}</p>
+            <p>{comment.comment}</p>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
 
-export default Comment
+export default AddComment
