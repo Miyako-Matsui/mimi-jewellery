@@ -10,7 +10,12 @@ function getItem(id, db = connection) {
   return db('items').select().where('id', id)
 }
 
+function getComments(db = connection) {
+  return db('comments').select()
+}
+
 module.exports = {
   getItems,
   getItem,
+  getComments,
 }

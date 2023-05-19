@@ -27,4 +27,14 @@ router.get('/:id', (req, res) => {
     .catch((err) => res.status(500).json({ message: err.message }))
 })
 
+router.get('/:id/comments', (req, res) => {
+  //get db data
+  dbFuncs
+    .getComments()
+    //send on res
+    .then((commentsRoute) => {
+      res.json(commentsRoute)
+    })
+    .catch((err) => res.status(500).json({ message: err.message }))
+})
 module.exports = router
