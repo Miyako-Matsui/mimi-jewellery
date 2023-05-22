@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { getComments } from '../api/items'
 
-function AddComment() {
+function Comment() {
+  //show comment
+  const [comments, setComments] = useState([])
+
+  // useEffect(() => {
+  //   getComments()
+  //     .then((comments) => setComments(comments))
+  //     .catch((err) => err.message)
+  // }, [])
+
+  //form/add comment
   const [formData, setFormData] = useState({
     name: '',
     date: '',
     comment: '',
   })
-
-  const [comments, setComments] = useState([])
-
-  useEffect(() => {
-    console.log('useEffect')
-  }, [])
 
   const handleType = (evt) => {
     const value = evt.target.value
@@ -29,7 +34,7 @@ function AddComment() {
 
   return (
     <>
-      <div className="comment">
+      <div className="comment-form">
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" onChange={handleType} />
@@ -61,4 +66,4 @@ function AddComment() {
   )
 }
 
-export default AddComment
+export default Comment

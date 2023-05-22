@@ -4,6 +4,7 @@ exports.up = (knex) => {
     table.string('name')
     table.text('img')
     table.integer('price')
+    table.integer('comment_id')
   })
 }
 

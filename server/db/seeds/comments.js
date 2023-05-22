@@ -18,5 +18,11 @@ exports.seed = async function (knex) {
       date: '150523',
       comment: 'Thanks!',
     },
+    {
+      id: 3,
+      name: 'GS',
+      date: '170523',
+      comment: 'Beautiful!',
+    },
   ])
 }
