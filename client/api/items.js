@@ -11,3 +11,4 @@ export function getItem(id) {
 export function getComments(id) {
   return request.get(`/api/v1/items/${id}/comments`).then((res) => res.body)
 }
+//ここのidはuseParamのitem_id

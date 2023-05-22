@@ -13,6 +13,9 @@ function getItem(id, db = connection) {
 function getComments(id, db = connection) {
   return db('comments').select().where('item_id', id)
 }
+//item_idをidとして呼びますってことを設定
+//ここのidはidという名前でなくてもいい、
+//重要なのはdatabaseからfieldの'item_id'を持ってくるということ
 
 // function addComent(newCpmment, db = connection) {
 //   return (

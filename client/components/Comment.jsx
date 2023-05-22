@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { getComments } from '../api/items'
 
 function Comment() {
-  // const { id } = useParams()
+  const { id } = useParams()
 
-  // const [item, setItem] = useState([])
-
-  // useEffect(() => {
-  //   getItem(id)
-  //     .then((item) => setItem(item))
-  //     .catch((err) => err.message)
-  // }, [id])
-
-  // show comment
-  const [comments, setComments] = useState([])
+  const [comment, commentItem] = useState([])
 
   useEffect(() => {
     getComments(id)
-      .then((comments) => setComments(comments))
+      .then((comment) => commentItem(comment))
       .catch((err) => err.message)
-  }, [])
+  }, [id])
 
   return (
     <>
       <div className="show-comments">
         <ul>
-          {comments.map((comment, index) => {
+          {comment.map((comment, index) => {
             return (
               <p key={index}>
-                <li>{comment.comment}</li>
+                <li>{comment.body}</li>
               </p>
             )
           })}

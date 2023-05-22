@@ -3,7 +3,8 @@ exports.up = (knex) => {
     table.increments('id')
     table.string('name')
     table.integer('date')
-    table.text('comment')
+    table.text('body')
+    table.integer('item_id')
   })
 }
 

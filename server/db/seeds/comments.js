@@ -10,19 +10,22 @@ exports.seed = async function (knex) {
       id: 1,
       name: 'GG',
       date: '190523',
-      comment: 'I like it!',
+      body: 'I like it!',
+      item_id: '1',
     },
     {
       id: 2,
       name: 'GM',
       date: '150523',
-      comment: 'Thanks!',
+      body: 'Thanks!',
+      item_id: '2',
     },
     {
       id: 3,
       name: 'GS',
       date: '170523',
-      comment: 'Beautiful!',
+      body: 'Beautiful!',
+      item_id: '3',
     },
   ])
 }

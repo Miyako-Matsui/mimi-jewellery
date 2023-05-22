@@ -1,15 +1,7 @@
 import React, { useState } from 'react'
-import { getComments } from '../api/items'
 
 function Comment() {
-  //show comment
   const [comments, setComments] = useState([])
-
-  // useEffect(() => {
-  //   getComments()
-  //     .then((comments) => setComments(comments))
-  //     .catch((err) => err.message)
-  // }, [])
 
   //form/add comment
   const [formData, setFormData] = useState({
