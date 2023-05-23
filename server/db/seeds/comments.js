@@ -8,21 +8,21 @@ exports.seed = async function (knex) {
   await knex('comments').insert([
     {
       id: 1,
-      name: 'GG',
+      name: 'G.G',
       date: '190523',
       body: 'I like it!',
       item_id: '1',
     },
     {
       id: 2,
-      name: 'GM',
+      name: 'S.Y',
       date: '150523',
       body: 'Thanks!',
       item_id: '2',
     },
     {
       id: 3,
-      name: 'GS',
+      name: 'M.I',
       date: '170523',
       body: 'Beautiful!',
       item_id: '3',

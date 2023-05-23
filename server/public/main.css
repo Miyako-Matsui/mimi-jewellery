@@ -211,7 +211,9 @@ li {
 
 .link_home,
 .each_item,
-.comment {
+.all_comments,
+.comment_form,
+.add_comments_title {
   text-align: center;
   display: block;
 }
@@ -219,4 +221,9 @@ li {
 .cart_button {
   display: block;
   margin: auto;
+}
+
+.all_comments,
+.add_comments_title {
+  padding: 30px;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getItem } from '../api/items'
 import { Link, useParams } from 'react-router-dom'
 import AddComment from './AddComment'
-import Comment from './Comment'
+import Comments from './Comments'
 
 function Item() {
   const { id } = useParams()
@@ -31,12 +31,12 @@ function Item() {
             </li>
           ))}
         </ul>
-      )}
-      <div>
-        <Comment />
-      </div>
+      )}{' '}
       <div>
         <AddComment />
+      </div>{' '}
+      <div>
+        <Comments />
       </div>
       <div>
         <Link className="link_home" to={'/'}>

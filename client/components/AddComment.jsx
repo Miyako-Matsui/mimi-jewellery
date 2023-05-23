@@ -26,8 +26,9 @@ function Comment() {
 
   return (
     <>
-      <div className="comment-form">
-        <form onSubmit={handleSubmit}>
+      <p className="add_comments_title">Add your comment</p>
+      <div>
+        <form onSubmit={handleSubmit} className="comment_form">
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" onChange={handleType} />
 
@@ -44,7 +45,6 @@ function Comment() {
           <button>Submit</button>
         </form>
       </div>
-
       <div>
         {comments.map((comment) => (
           <div key={comment.id}>

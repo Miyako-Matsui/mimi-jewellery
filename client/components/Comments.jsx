@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getComments } from '../api/items'
 
-function Comment() {
+function Comments() {
   const { id } = useParams()
 
   const [comment, commentItem] = useState([])
@@ -15,13 +15,15 @@ function Comment() {
 
   return (
     <>
-      <div className="show-comments">
+      <div className="all_comments">
         <ul>
           {comment.map((comment, index) => {
             return (
-              <p key={index}>
-                <li>{comment.body}</li>
-              </p>
+              <div key={index}>
+                <p>Name: {comment.name}</p>
+                <p>Date: {comment.date}</p>
+                <p>{comment.body}</p>
+              </div>
             )
           })}
         </ul>
@@ -30,4 +32,4 @@ function Comment() {
   )
 }
 
-export default Comment
+export default Comments
