@@ -2,7 +2,7 @@ exports.up = (knex) => {
   return knex.schema.createTable('comments', (table) => {
     table.increments('id')
     table.string('name')
-    table.integer('date')
+    table.date('date')
     table.text('body')
     table.integer('item_id')
   })
