@@ -13,6 +13,9 @@ export function getComments(id) {
 }
 //ここのidはuseParamのitem_id
 
-export function addComment(id) {
-  return request.post(`/api/v1/items/${id}/comments`).then((res) => res.body)
+export function saveComment(id, newComment) {
+  return request
+    .post(`/api/v1/items/${id}/comments`)
+    .send(newComment)
+    .then((res) => res.body)
 }

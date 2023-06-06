@@ -33,7 +33,7 @@ function Item() {
         </ul>
       )}{' '}
       <div>
-        <AddComment />
+        <AddComment itemId={id} />
       </div>{' '}
       <div>
         <Comments />

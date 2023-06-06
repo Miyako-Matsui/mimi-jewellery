@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
+import { saveComment } from '../api/items'
 
-function Comment() {
-  const [comments, setComments] = useState([])
+function AddComment(props) {
+  const { itemId } = props
 
   //form/add comment
   const [formData, setFormData] = useState({
+    item_id: Number(itemId),
     name: '',
     date: '',
-    comment: '',
+    body: '',
   })
 
   const handleType = (evt) => {
     const value = evt.target.value
-    const name = evt.target.name
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
+    const fieldName = evt.target.name
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [fieldName]: value,
+    }))
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    console.log('submit', formData.name)
+    console.log(formData)
+    saveComment(itemId, formData)
   }
 
   return (
@@ -35,27 +38,13 @@ function Comment() {
           <label htmlFor="date">Date</label>
           <input type="date" id="date" name="date" onChange={handleType} />
 
-          <label htmlFor="comment">Comment</label>
-          <input
-            type="text"
-            id="comment"
-            name="comment"
-            onChange={handleType}
-          />
-          <button>Submit</button>
+          <label htmlFor="body">Comment</label>
+          <input type="text" id="body" name="body" onChange={handleType} />
+          <button>Add Comment</button>
         </form>
-      </div>
-      <div>
-        {comments.map((comment) => (
-          <div key={comment.id}>
-            <p>{comment.name}</p>
-            <p>{comment.date}</p>
-            <p>{comment.comment}</p>
-          </div>
-        ))}
       </div>
     </>
   )
 }
 
-export default Comment
+export default AddComment

@@ -40,10 +40,11 @@ router.get('/:id/comments', (req, res) => {
 })
 
 router.post('/:id/comments', (req, res) => {
+  console.log(req.body)
   //get db data
   const newComment = req.body
   dbFuncs
-    .addComment(newComment)
+    .saveComment(newComment)
     //send on res
     .then((itemsRoutes) => {
       res.json(itemsRoutes)

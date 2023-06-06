@@ -17,15 +17,15 @@ function getComments(id, db = connection) {
 //ここのidはidという名前でなくてもいい、
 //重要なのはdatabaseからfieldの'item_id'を持ってくるということ
 
-function addComment(newcomment, db = connection) {
-  return db('comments').insert(newcomment)
+function saveComment(newComment, db = connection) {
+  return db('comments').insert(newComment)
 }
 
 module.exports = {
   getItems,
   getItem,
   getComments,
-  addComment,
+  saveComment,
 }
 // function addComment(newCpmment, db = connection) {
 //   return (
